@@ -1,74 +1,522 @@
----
-layout: page
-tagline:
----
+<!DOCTYPE html>
+<html class="no-js" lang="en">
 
-{% for post in paginator.posts %}
+<head>
 
-<article class="home">
+	<meta charset="utf-8">
+	<title>Jeroen VdB</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-  <span class="post-date">
-    {% assign d = post.date | date: "%d" | plus:'0' %}
-    {{ post.date | date: "%B" }}
-    {% case d %}
-    {% when 1 or 21 or 31 %}{{ d }}st,
-    {% when 2 or 22 %}{{ d }}nd,
-    {% when 3 or 23 %}{{ d }}rd,
-    {% else %}{{ d }}th,
-    {% endcase %}
-    {{ post.date | date: "%Y" }}
-  </span>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <h2>
-    <a href="{{ site.BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
-  </h2>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/vendor.css">
 
-  <div>
-    {% if post.fullview %}
-    {{ post.content }}
-    {% else %}
-    {% if post.shortinfo %}
-    {{ post.shortinfo }}
-    {% elsif post.description %}
-    {{ post.description }}
-    {% else %}
-    {{ post.excerpt }}
-    {% endif %}
-    {% endif %}
-  </div>
+	<script src="js/modernizr.js"></script>
+	<script src="js/pace.min.js"></script>
 
-</article>
-{% endfor %}
-<hr/>
+	<link rel="icon" type="image/png" href="favicon.png">
+</head>
 
-<ul class="pager"> 
+<body id="top">
+	<!-- header 
+   ================================================== -->
+	<header>
+		<div class="row">
+			<div class="top-bar">
+				<a class="menu-toggle" href="#"><span>Menu</span></a>
+				<div class="logo">
+					MENU
+				</div>
+				<nav id="main-nav-wrap">
+					<ul class="main-navigation">
+						<li class="current"><a class="smoothscroll" href="#intro" title="">Home</a></li>
+						<li><a class="smoothscroll" href="#about" title="">About</a></li>
+						<li><a class="smoothscroll" href="#resume" title="">Resume</a></li>
+						<li><a class="smoothscroll" href="#skills" title="">Skills</a></li>
+						<li><a class="smoothscroll" href="#contact" title="">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header> <!-- /header -->
 
-  {% if paginator.previous_page %}
-  <li class="previous">
-    {% if paginator.previous_page == 1 %}
-    <a href="{{ site.BASE_PATH }}/">&larr; Newer</a>
-    {% else %}
-    <a href="{{ site.BASE_PATH }}/{{ site.paginate_path | replace: ':num', paginator.previous_page }}">&larr; Newer</a>
-    {% endif %}
-  </li>
-  {% else %}
-  <li class="previous disabled">
-    <a>&larr; Newer</a>
-  </li>
-  {% endif %}
-  
-  <li>
-    <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-  </li>
+	<!-- intro section
+   ================================================== -->
+	<section id="intro">
+		<div class="intro-overlay"></div>
+		<div class="intro-content">
+			<div class="row">
+				<div class="col-twelve">
+					<h5>Hello, World.</h5>
+					<h1>I'm Jeroen VdB.</h1>
+					<p class="intro-position">
+						<span>Integration Consultant</span>
+					</p>
+					<a class="button stroke smoothscroll" href="#about" title="">More About Me</a>
+				</div>
+			</div>
+		</div>
+		<ul class="intro-social">
+			<li><a href="https://www.linkedin.com/in/jeroen-van-den-broeck-28051996/"><i class="fa fa-linkedin"></i></a>
+			</li>
+			<li><a href="https://www.facebook.com/jeroen.vdb.14"><i class="fa fa-facebook"></i></a></li>
+			<li><a href="https://twitter.com/JeroenVdB_96"><i class="fa fa-twitter"></i></a></li>
+			<li><a href="https://github.com/Jeroen-VdB"><i class="fa fa-github"></i></a></li>
+		</ul>
+	</section> <!-- /intro -->
 
-  {% if paginator.next_page %}
-  <li class="next">
-    <a href="{{ site.BASE_PATH }}/{{ site.paginate_path | replace: ':num', paginator.next_page }}">Older &rarr;</a>
-  </li>
-  {% else %}
-  <li class="next disabled">
-    <a>Older &rarr;</a>        
-  </li>
-  {% endif %}
 
-</ul>
+	<!-- about section
+   ================================================== -->
+	<section id="about">
+		<div class="row section-intro">
+			<div class="col-twelve">
+				<h5>About</h5>
+				<h1><a href="https://www.youtube.com/watch?v=sNPnbI1arSE">Hi, my name is...</a></h1>
+				<p>Jeroen... Wait I already wrote that at above, didn't I?</p>
+				<div class="intro-info">
+					<img src="images/profile-pic.jpg" alt="Profile Picture">
+					<p class="lead">My passion for programming all started by making scripts for games.
+						After my first steps in software engineering I changed to ICT in my last years of high school,
+						followed by Applied Computer Science in college.</p>
+					<p class="lead">Nowadays I like to design and implement integration solutions. This includes simple
+						setups in a single Azure Logic App or complex hybrid solutions using Azure and on-premises
+						webservices and messaging frameworks.</p>
+					<p class="lead" style="font-style: italic;">&#62; Every day I enjoy going to work to innovate both
+						the customer and myself.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row about-content">
+			<div class="col-six tab-full">
+				<h3>Profile</h3>
+				<p></p>
+				<ul class="info-list">
+					<li>
+						<strong>Fullname:</strong>
+						<span>Jeroen Van den Broeck</span>
+					</li>
+					<li>
+						<strong>Birth Date:</strong>
+						<span>28 May 1996</span>
+					</li>
+					<li>
+						<strong>Job:</strong>
+						<span>Integration Consultant</span>
+					</li>
+					<li>
+						<strong>Blog:</strong>
+						<span><a href="https://jeroen-vdb.medium.com"
+								style="color: #888888;">https://jeroen-vdb.medium.com</a></span>
+					</li>
+					<li>
+						<strong>Languages:</strong>
+						<span>
+							<ul>
+								<li>Dutch: mother tongue</li>
+								<li>English: professional</li>
+								<li>French: notions</li>
+							</ul>
+						</span>
+					</li>
+				</ul> <!-- /info-list -->
+			</div>
+			<div class="col-six tab-full">
+				<h3>Skills</h3>
+				<p>I mainly focus on implementing integration solutions using Microsoft Azure iPaaS.</p>
+				<ul class="skill-bars">
+					<li>
+						<div class="progress percent95"><span>95%</span></div>
+						<strong>Logic Apps</strong>
+					</li>
+					<li>
+						<div class="progress percent90"><span>90%</span></div>
+						<strong>Azure Functions</strong>
+					</li>
+					<li>
+						<div class="progress percent85"><span>85%</span></div>
+						<strong>Service Bus</strong>
+					</li>
+					<li>
+						<div class="progress percent80"><span>80%</span></div>
+						<strong>API Management</strong>
+					</li>
+				</ul> <!-- /skill-bars -->
+				<a href="#skills" title="See all skills" class="button stroke smoothscroll">See all skills</a>
+			</div>
+			<div class="row button-section">
+				<div class="col-twelve">
+					<a href="#resume" title="Continue" class="button button-primary smoothscroll">Continue</a>
+				</div>   		
+			</div>
+		</div>
+	</section> <!-- /process-->
+
+
+	<!-- resume Section
+   ================================================== -->
+	<section id="resume" class="grey-section">
+		<div class="row section-intro">
+			<div class="col-twelve">
+				<h5>Resume</h5>
+				<h1><a href="https://www.youtube.com/watch?v=whQQpwwvSh4">Dirty Deeds Done Dirt Cheap</a></h1>
+				<p class="lead">An overview of my education, work experience and earned certificates.</p>
+			</div>
+		</div> <!-- /section-intro-->
+
+		<div class="row resume-timeline">
+			<div class="col-twelve resume-header">
+				<h2>Work Experience</h2>
+			</div> <!-- /resume-header -->
+			<div class="col-twelve">
+				<div class="timeline-wrap">
+					<div class="timeline-block">
+						<div class="timeline-ico">
+							<i class="fa fa-briefcase"></i>
+						</div>
+						<div class="timeline-header">
+							<h3>Integration Consultant</h3>
+							<p>October 2017 - March 2021</p>
+						</div>
+						<div class="timeline-content">
+							<h4>Inetum-Realdolmen @ ArcelorMittal</h4>
+							<p>I was part of the integration team located in Ghent. In this team we managed multiple
+								projects based on integration frameworks like BizTalk, IBM MQ and IBM API Connect. To
+								onboard logistical and other external partners, we used Azure with its on-premises data
+								gateway in order to safely forward data from the cloud to the on-premises environment.
+							</p>
+						</div>
+					</div> <!-- /timeline-block -->
+					<div class="timeline-block">
+						<div class="timeline-ico">
+							<i class="fa fa-briefcase"></i>
+						</div>
+						<div class="timeline-header">
+							<h3>Azure Integration Developer</h3>
+							<p>April 2020 - August 2020</p>
+						</div>
+						<div class="timeline-content">
+							<h4>Inetum-Realdolmen @ Hospital Logistics</h4>
+							<p>The company integrated with their customers using BizTalk. Due to the ending lifecycle of
+								BizTalk they wanted to move their solutions to the cloud.
+								Together with a colleague (Integration Architect) we came up with a solution to replace
+								the current BizTalk logic with a new dynamic setup in Azure.
+								We used Azure DevOps to automatically deploy our resources to Azure, including our
+								configuration.
+								With the use of an Integration Account, Logic Apps, Azure Functions, ServiceBus, and a
+								SQL database hosted in Azure we were able to fully mimic the old solution.
+								Furthermore, our client can now easily expand the configuration to onboard new customers
+								with the least amount of effort. </p>
+						</div>
+					</div> <!-- /timeline-block -->
+				</div> <!-- /timeline-wrap -->
+			</div> <!-- /col-twelve -->
+		</div> <!-- /resume-timeline -->
+
+		<div class="row resume-timeline">
+			<div class="col-twelve resume-header">
+				<h2>Certificates</h2>
+			</div> <!-- /resume-header -->
+			<div class="col-twelve">
+				<div class="timeline-wrap">
+					<div class="timeline-block">
+						<div class="timeline-ico">
+							<i class="fa fa-certificate"></i>
+						</div>
+						<div class="timeline-header">
+							<h3>Microsoft</h3>
+							<p>2 July 2020</p>
+						</div>
+						<div class="timeline-content">
+							<h4>Azure Fundamentals</h4>
+							<p><a
+									href="https://www.youracclaim.com/badges/08c9add5-6037-48a3-ada0-2a31fa1533ce/public_url">View on Acclaim</a>.
+							</p>
+						</div>
+					</div> <!-- /timeline-block -->
+				</div> <!-- /timeline-wrap -->
+			</div> <!-- /col-twelve -->
+		</div> <!-- /resume-timeline -->
+
+		<div class="row resume-timeline">
+			<div class="col-twelve resume-header">
+				<h2>Education</h2>
+			</div> <!-- /resume-header -->
+			<div class="col-twelve">
+				<div class="timeline-wrap">
+					<div class="timeline-block">
+						<div class="timeline-ico">
+							<i class="fa fa-graduation-cap"></i>
+						</div>
+						<div class="timeline-header">
+							<h3>Bachelor Degree</h3>
+							<p>2014 - 2017</p>
+						</div>
+						<div class="timeline-content">
+							<h4>Erasmus Brussels University</h4>
+							<p>Applied Computer Science</p>
+						</div>
+					</div> <!-- /timeline-block -->
+					<div class="timeline-block">
+						<div class="timeline-ico">
+							<i class="fa fa-graduation-cap"></i>
+						</div>
+						<div class="timeline-header">
+							<h3>Higher Education</h3>
+							<p>2012 - 2014</p>
+						</div>
+						<div class="timeline-content">
+							<h4>Don Bosco Halle</h4>
+							<p>Industrial ICT</p>
+						</div>
+					</div> <!-- /timeline-block -->
+				</div> <!-- /timeline-wrap -->
+			</div> <!-- /col-twelve -->
+		</div> <!-- /resume-timeline -->
+	</section> <!-- /features -->
+
+	<!-- skills Section
+   ================================================== -->
+	<section id="skills">
+		<div class="row section-intro">
+			<div class="col-twelve">
+				<h5>All skills</h5>
+				<h1><a href="https://www.youtube.com/watch?v=WcHu6pGtNbY">Skills To Pay The Bills</a></h1>
+				<p class="lead">A not so brief overview of skills.</p>
+			</div>
+		</div>
+		<div class="row about-content">
+			<div class="col-six tab-full">
+				<h3>A Surface of Azure skills</h3>
+				<ul class="skill-bars">
+					<li>
+						<div class="progress percent80"><span>80%</span></div>
+						<strong>Azure Storage</strong>
+					</li>
+					<li>
+						<div class="progress percent80"><span>80%</span></div>
+						<strong>Integration Accounts</strong>
+					</li>
+					<li>
+						<div class="progress percent70"><span>70%</span></div>
+						<strong>Cosmos DB</strong>
+					</li>
+					<li>
+						<div class="progress percent70"><span>70%</span></div>
+						<strong>Log Analytics</strong>
+					</li>
+					<li>
+						<div class="progress percent60"><span>60%</span></div>
+						<strong>ARM Templates</strong>
+					</li>
+				</ul>
+			</div>
+			<div class="col-six tab-full">
+				<h3>.NET</h3>
+				<ul class="skill-bars">
+					<li>
+						<div class="progress percent90"><span>90%</span></div>
+						<strong>C#</strong>
+					</li>
+					<li>
+						<div class="progress percent80"><span>80%</span></div>
+						<strong>ASP.NET Core 5</strong>
+					</li>
+					<li>
+						<div class="progress percent80"><span>80%</span></div>
+						<strong>MS Test</strong>
+					</li>
+					<li>
+						<div class="progress percent75"><span>75%</span></div>
+						<strong>Entity Framework</strong>
+					</li>
+					<li>
+						<div class="progress percent60"><span>60%</span></div>
+						<strong>Blazor</strong>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row about-content">
+			<div class="col-six tab-full">
+				<h3>Integration</h3>
+				<ul class="skill-bars">
+					<li>
+						<div class="progress percent90"><span>90%</span></div>
+						<strong>OpenAPI</strong>
+					</li>
+					<li>
+						<div class="progress percent80"><span>80%</span></div>
+						<strong>BizTalk</strong>
+					</li>
+					<li>
+						<div class="progress percent65"><span>65%</span></div>
+						<strong>IBM API Connect</strong>
+					</li>
+					<li>
+						<div class="progress percent60"><span>60%</span></div>
+						<strong>IBM MQ</strong>
+					</li>
+				</ul>
+			</div>
+			<div class="col-six tab-full">
+				<h3>Web</h3>
+				<ul class="skill-bars">
+					<li>
+						<div class="progress percent90"><span>90%</span></div>
+						<strong>HTML</strong>
+					</li>
+					<li>
+						<div class="progress percent99"><span>80%</span></div>
+						<strong>CSS</strong>
+					</li>
+					<li>
+						<div class="progress percent60"><span>60%</span></div>
+						<strong>JavaScrip</strong>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row about-content">
+			<div class="col-six tab-full">
+				<h3>Tools</h3>
+				<ul class="skill-bars">
+					<li>
+						<div class="progress percent90"><span>90%</span></div>
+						<strong>Visual Studio</strong>
+					</li>
+					<li>
+						<div class="progress percent85"><span>85%</span></div>
+						<strong>Azure DevOps</strong>
+					</li>
+					<li>
+						<div class="progress percent80"><span>80%</span></div>
+						<strong>Git</strong>
+					</li>
+					<li>
+						<div class="progress percent80"><span>80%</span></div>
+						<strong>Jira & Confluence</strong>
+					</li>
+					<li>
+						<div class="progress percent70"><span>70%</span></div>
+						<strong>SonarQube</strong>
+					</li>
+					<li>
+						<div class="progress percent60"><span>60%</span></div>
+						<strong>Dynatrace</strong>
+					</li>
+				</ul>
+			</div>
+			<div class="col-six tab-full">
+				<h3>Methodologies</h3>
+				<ul class="skill-bars">
+					<li>
+						<div class="progress percent80"><span>80%</span></div>
+						<strong>Kanban</strong>
+					</li>
+					<li>
+						<div class="progress percent75"><span>75%</span></div>
+						<strong>Agile</strong>
+					</li>
+					<li>
+						<div class="progress percent75"><span>75%</span></div>
+						<strong>Scrum</strong>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row about-content">
+			<div class="col-six tab-full">
+				<h3>Hobbies</h3>
+				<ul class="skill-bars">
+					<li>
+						<div class="progress percent100"><span>100%</span></div>
+						<strong>Hiking</strong>
+					</li>
+					<li>
+						<div class="progress percent100"><span>100%</span></div>
+						<strong>Socializing</strong>
+					</li>
+					<li>
+						<div class="progress percent100"><span>100%</span></div>
+						<strong>Music</strong>
+					</li>
+					<li>
+						<div class="progress percent75"><span>75%</span></div>
+						<strong>Drumming</strong>
+					</li>
+					<li>
+						<div class="progress percent75"><span>75%</span></div>
+						<strong>Gaming</strong>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section> <!-- /skills-->
+
+	<!-- contact
+   ================================================== -->
+	<section id="contact">
+		<div class="row section-intro">
+			<div class="col-twelve">
+				<h5>Contact</h5>
+				<h1><a href="https://www.youtube.com/watch?v=kl1hgXfX5-U">Bring The Noise</a></h1>
+				<p class="lead">You can contact me via LinkedIn or Facebook by clicking on the social buttons at the top
+					or bottom of the page.</p>
+			</div>
+		</div> <!-- /section-intro -->
+		<div class="row contact-info">
+			<div class="col-twelve tab-full">
+				<div class="icon">
+					<i class="icon-pin"></i>
+				</div>
+				<h5>Where to find me</h5>
+				<p>
+					1670 Pepingen<br>
+					Belgium
+				</p>
+			</div>
+		</div> <!-- /contact-info -->
+	</section> <!-- /contact -->
+
+	<!-- footer
+   ================================================== -->
+
+	<footer>
+		<div class="row">
+			<div class="col-six tab-full pull-right social">
+				<ul class="footer-social">
+					<li><a href="https://www.linkedin.com/in/jeroen-van-den-broeck-28051996/"><i
+								class="fa fa-linkedin"></i></a></li>
+					<li><a href="https://www.facebook.com/jeroen.vdb.14"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="https://twitter.com/JeroenVdB_96"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="https://github.com/Jeroen-VdB"><i class="fa fa-github"></i></a></li>
+				</ul>
+			</div>
+			<div class="col-six tab-full" style="opacity: 30%;">
+				<div class="copyright">
+					<span>© Copyright Kards 2016.</span>
+					<span>Design by <a href="http://www.styleshout.com/">styleshout</a></span>
+				</div>
+			</div>
+			<div id="go-top">
+				<a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
+			</div>
+		</div> <!-- /row -->
+	</footer>
+	<div id="preloader">
+		<div id="loader"></div>
+	</div>
+
+	<!-- Java Script
+   ================================================== -->
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>
