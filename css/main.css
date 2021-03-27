@@ -2518,7 +2518,7 @@ footer .row {
 footer .social {
 	text-align: right;
 }
-footer .footer-social {
+footer .footer-social, #contact .footer-social {
 	display: inline-block;
 	font-size: 2.1rem;
 	margin: 0;
@@ -2526,12 +2526,12 @@ footer .footer-social {
 	position: relative;
 	top: -.3rem;
 }
-footer .footer-social li {
+footer .footer-social li, #contact .footer-social li {
 	display: inline-block;
 	margin: 0 12px;
 	padding: 0;
 }
-footer .footer-social li a {
+footer .footer-social li a, #contact .footer-social li a {
 	color: #FFFFFF;
 }
 footer .copyright span {
