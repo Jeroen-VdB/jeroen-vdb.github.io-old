@@ -2183,6 +2183,101 @@ header .logo {
 	background: #0078d7;
 }
 
+/** 
+ * ===================================================================
+ * 15. Skills - (_layout.scss)
+ *
+ * ------------------------------------------------------------------- 
+ */
+
+.skills-content {
+	max-width: 1200px;
+}
+
+.skills-list {
+	margin-top: 1.2rem;
+	text-align: center;
+}
+
+.skills-list .skill {
+	margin-bottom: 1.2rem;
+	padding: 0 30px;
+}
+
+.skills-list h3 {
+	font-family: "poppins-bold", sans-serif;
+	font-size: 1.8rem;
+	text-transform: uppercase;
+	letter-spacing: .25rem;
+	color: #313131;
+}
+
+.skill-image {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 120px;
+	margin-left: 2rem;
+	margin-right: 2rem;
+}
+
+.si-large img {
+    width: 100px;
+    height: 100px;
+} 
+
+.si-medium img {
+    width: 64px;
+    height: 64px;
+} 
+
+.si-small img {
+    width: 40px;
+    height: 40px;
+} 
+
+.skill-name {
+    display: block;
+	margin-bottom: 3rem;
+}
+
+.si-large .skill-name {
+	font-size: 2.2rem;
+} 
+
+.si-medium .skill-name {
+	font-size: 2rem;
+} 
+
+.si-small .skill-name {
+	font-size: 1.8rem;
+} 
+
+/* pagination */
+#skills .owl-pagination {
+	text-align: center;
+	width: 100%;
+	margin: .6rem 0 0;
+}
+
+#skills .owl-theme .owl-controls .owl-page {
+	display: inline-block;
+}
+
+#skills .owl-theme .owl-controls .owl-page span {
+	display: block;
+	width: 1.2rem;
+	height: 1.2rem;
+	margin: 1.2rem .8rem 0 .8rem;
+	border-radius: 50%;
+	display: inline-block;
+	background: #313131;
+}
+
+#skills .owl-theme .owl-controls .owl-page.active span {
+	background: #0078d7;
+}
+
 
 /** 
  * ===================================================================
