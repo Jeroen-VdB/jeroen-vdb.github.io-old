@@ -2216,28 +2216,26 @@ header .logo {
     vertical-align: top;
     display: inline-block;
     text-align: center;
-    width: 120px;
-	margin-left: 2rem;
-	margin-right: 2rem;
+    width: 180px;
 }
 
 .si-large img {
-    width: 100px;
-    height: 100px;
+	width: 100px;
+	height: 100px;
 } 
 
 .si-medium img {
-    width: 64px;
-    height: 64px;
+	width: 64px;
+	height: 64px;
 } 
 
 .si-small img {
-    width: 40px;
-    height: 40px;
+	width: 40px;
+	height: 40px;
 } 
 
 .skill-name {
-    display: block;
+	display: block;
 	margin-bottom: 3rem;
 }
 
@@ -2251,7 +2249,55 @@ header .logo {
 
 .si-small .skill-name {
 	font-size: 1.8rem;
-} 
+}
+
+/* @media only screen and (max-width:1024px) {
+
+} */
+
+@media only screen and (max-width:768px) {
+	.si-large img {
+		width: 64px;
+		height: 64px;
+	} 
+	
+	.si-medium img {
+		width: 40px;
+		height: 40px;
+	} 
+	
+	.si-small img {
+		width: 32px;
+		height: 32px;
+	} 
+	
+	.skill-name {
+		display: block;
+		margin-bottom: 1rem;
+	}
+	
+	.si-large .skill-name {
+		font-size: 2rem;
+	} 
+	
+	.si-medium .skill-name {
+		font-size: 1.8rem;
+	} 
+	
+	.si-small .skill-name {
+		font-size: 1.6rem;
+	}
+}
+@media only screen and (max-width:725px) {
+	.skill-image {
+		display: block;
+		margin: 0 auto;
+	}
+
+	.skill-name {
+		margin-bottom: 1rem;
+	}
+}
 
 /* pagination */
 #skills .owl-pagination {
